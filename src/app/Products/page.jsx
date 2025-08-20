@@ -2,7 +2,7 @@
 import Cardy from "../_components/Card";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 const Page = () => {
@@ -11,7 +11,7 @@ const Page = () => {
   const [products, setProducts] = useState([]);
   const [totalProdcts, setTotalProducts] = useState();
 
-  const searchParams = useSearchParams();
+  const searchParams = useParams();
   const page = searchParams.get("page");
   const [currentPage, setCurrentPage] = useState(page ? page : 1);
 
