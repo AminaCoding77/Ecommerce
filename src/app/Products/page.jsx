@@ -2,7 +2,7 @@
 import Cardy from "../_components/Card";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
+
 import { Button } from "@/components/ui/button";
 
 const Page = () => {
@@ -11,9 +11,7 @@ const Page = () => {
   const [products, setProducts] = useState([]);
   const [totalProdcts, setTotalProducts] = useState();
 
-  const searchParams = useParams();
-  const page = searchParams.get("page");
-  const [currentPage, setCurrentPage] = useState(page ? page : 1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const pageDef = 12;
 
@@ -60,7 +58,7 @@ const Page = () => {
         </div>
         <hr className="border-t-2 border-gray-200 w-full my-4"></hr>
       </div>
-      <div className="flex flex-col w-full ml-230 mr-130 mt-5">
+      <div className="flex flex-col w-full ml-130 mr-130 mt-5">
         <input
           className="w-100 h-5 border border-gray-300 rounded-md text-[14px] py-4 px-4"
           placeholder="Search products..."
